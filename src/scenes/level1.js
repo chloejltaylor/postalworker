@@ -52,72 +52,72 @@ export default class level1 extends Phaser.Scene
 
     //LEVEL 2
     // HOUSES
-    target2_1posX = 200
+    target2_1posX = 160
     target2_1posY = 350
     target2_2posX = 450
     target2_2posY = 350
     target2_3posX = 600
     target2_3posY = 350
-    target2_4posX = 900
+    target2_4posX = 890
     target2_4posY = 350
-    target2_5posX = 1150
+    target2_5posX = 1165
     target2_5posY = 350   
-    target2_6posX = 1300
+    target2_6posX = 1315
     target2_6posY = 350 
     allTargets2
 
     //END POSITIONS
-    end2_1posX = 200
+    end2_1posX = 160
     end2_1posY = 350
     end2_2posX = 450
     end2_2posY = 350
     end2_3posX = 600
     end2_3posY = 350
-    end2_4posX = 900
+    end2_4posX = 890
     end2_4posY = 350
-    end2_5posX = 1150
+    end2_5posX = 1165
     end2_5posY = 350   
-    end2_6posX = 1300
+    end2_6posX = 1315
     end2_6posY = 350
     allEndPositions2
 
         //LEVEL 3
     // HOUSES
-    target3_1posX = -400
+    target3_1posX = -440
     target3_1posY = 350
     target3_2posX = -250
     target3_2posY = 350
-    target3_3posX = 100
+    target3_3posX = 130
     target3_3posY = 350
-    target3_4posX = 500
+    target3_4posX = 510
     target3_4posY = 350
-    target3_5posX = 650
+    target3_5posX = 700
     target3_5posY = 350   
-    target3_6posX = 1150
-    target3_6posY = 280
-    target3_7posX = 1150
-    target3_7posY = 480
+    target3_6posX = 1100
+    target3_6posY = 260
+    target3_7posX = 1100
+    target3_7posY = 495
     target3_8posX = 1600
     target3_8posY = 350 
     allTargets3
 
     //END POSITIONS
-    end3_1posX = -400
-    end3_1posY = 350
-    end3_2posX = -250
-    end3_2posY = 350
-    end3_3posX = 100
-    end3_3posY = 350
-    end3_4posX = 500
-    end3_4posY = 350
-    end3_5posX = 650
-    end3_5posY = 350   
-    end3_6posX = 1150
-    end3_6posY = 280
-    end3_7posX = 1150
-    end3_7posY = 480
-    end3_8posX = 1600
-    end3_8posY = 350
+    end3_1posX = this.target3_1posX
+    end3_1posY = this.target3_1posY
+    end3_2posX = this.target3_2posX
+    end3_2posY = this.target3_2posY
+    end3_3posX = this.target3_3posX
+    end3_3posY = this.target3_3posY
+    end3_4posX = this.target3_4posX
+    end3_4posY = this.target3_4posY
+    end3_5posX = this.target3_5posX
+    end3_5posY = this.target3_5posY   
+    end3_6posX = this.target3_6posX
+    end3_6posY = this.target3_6posY
+    end3_7posX = this.target3_7posX
+    end3_7posY = this.target3_7posY
+    end3_8posX = this.target3_8posX
+    end3_8posY = this.target3_8posY
     allEndPositions3
 
     //next letter
@@ -209,21 +209,21 @@ export default class level1 extends Phaser.Scene
             this.target3 = this.add.image(this.target1_3posX, this.target1_3posY, 'house1_3').setScale(0.7)
             this.target4 = this.add.image(this.target1_4posX, this.target1_4posY, 'house1_4').setScale(0.7)
         } else if(this.level==1) {
-            this.target1 = this.add.image(this.target2_1posX, this.target2_1posY, 'house2_1').setScale(0.7)
+            this.target1 = this.add.image(this.target2_1posX, this.target2_1posY, 'house2_1').setScale(0.6)
             this.target2 = this.add.image(this.target2_2posX, this.target2_2posY, 'house2_2').setScale(0.7)
             this.target3 = this.add.image(this.target2_3posX, this.target2_3posY, 'house2_3').setScale(0.7)
-            this.target4 = this.add.image(this.target2_4posX, this.target2_4posY, 'house2_4').setScale(0.7)
+            this.target4 = this.add.image(this.target2_4posX, this.target2_4posY, 'house2_4').setScale(0.6)
             this.target5 = this.add.image(this.target2_5posX, this.target2_5posY, 'house2_5').setScale(0.7)
             this.target6 = this.add.image(this.target2_6posX, this.target2_6posY, 'house2_6').setScale(0.7)
         } else if(this.level==2) {
             this.target1 = this.add.image(this.target3_1posX, this.target3_1posY, 'house3_1').setScale(0.7)
             this.target2 = this.add.image(this.target3_2posX, this.target3_2posY, 'house3_2').setScale(0.7)
-            this.target3 = this.add.image(this.target3_3posX, this.target3_3posY, 'house3_3').setScale(0.7)
+            this.target3 = this.add.image(this.target3_3posX, this.target3_3posY, 'house3_3').setScale(0.8)
             this.target4 = this.add.image(this.target3_4posX, this.target3_4posY, 'house3_4').setScale(0.7)
             this.target5 = this.add.image(this.target3_5posX, this.target3_5posY, 'house3_5').setScale(0.7)
             this.target6 = this.add.image(this.target3_6posX, this.target3_6posY, 'house3_6').setScale(0.7)
             this.target7 = this.add.image(this.target3_7posX, this.target3_7posY, 'house3_7').setScale(0.7)
-            this.target8 = this.add.image(this.target3_8posX, this.target3_8posY, 'house3_8').setScale(0.7)
+            this.target8 = this.add.image(this.target3_8posX, this.target3_8posY, 'house3_8').setScale(0.8)
         }
 
 

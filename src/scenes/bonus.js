@@ -13,12 +13,12 @@ export default class Bonus extends Phaser.Scene
     onboardingtime = 6000
 
     // Starting positions of the draggables
-    startStamp1X = 400
-    startStamp1Y = 750
+    startStamp1X = 500
+    startStamp1Y = 820
     startStamp2X = 700
-    startStamp2Y = 750
-    startStamp3X = 1000
-    startStamp3Y = 750
+    startStamp2Y = 820
+    startStamp3X = 900
+    startStamp3Y = 820
     parcelsArrayOriginal = ['parcel1', 'parcel1', 'parcel3', 'parcel4', 'parcel5', 'parcel6']
     sizeArrayOriginal = ['small', 'small', 'medium', 'medium', 'large', 'large']
     dialAnglesOriginal = ['35', '35', '90', '90', '145', '145']
@@ -67,11 +67,11 @@ export default class Bonus extends Phaser.Scene
         this.add.image(700, 450, 'background'); 
         this.add.image(700, 400, 'scales')
         
-        this.add.image(700, 800,'stamp_dock')
-        this.parcelCounter = this.add.image(1200, 800, 'postCounted0-6')
+        this.add.image(700, 850,'stamp_dock').setScale(0.6)
+        this.parcelCounter = this.add.image(1200, 850, 'postCounted0-6').setScale(0.6)
 
         // position dial
-        this.dial = this.add.image(700, 520, 'scales_dial').setAngle(0).setAlpha(0)
+        this.dial = this.add.image(700, 520, 'scales_dial').setAngle(10).setAlpha(0)
 
         this.onboardingTimer = this.time.delayedCall(this.onboardingtime, showDial, [], this)
         function showDial(){
@@ -313,13 +313,13 @@ export default class Bonus extends Phaser.Scene
                     alpha: 1,
                     angle: '10',
                     ease: 'Sine.easeInOut',
-                    duration: 200
+                    duration: 2000
                 },
                 {
 
                     angle: this.dialAngles[this.parcelNum],
                     ease: 'Sine.easeInOut',
-                    duration: 2000
+                    duration: 700
                 }
 
             ]

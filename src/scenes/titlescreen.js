@@ -159,12 +159,11 @@ create()
         this.scene.stop()
 
         this.scene.start('level1', {
-            level: 0,
+            level: 2,
             firstLevel: true
         })
 
         // this.scene.start('bonus', {
-        //     level: 2,
 
         // })
 
