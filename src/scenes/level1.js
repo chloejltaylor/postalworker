@@ -7,11 +7,7 @@ export default class level1 extends Phaser.Scene
     {
     super('level1')
     }
-
-    //amoutn to scroll by
-
-    ScrollFactor = 100
-    
+   
 
     // Time needed for onboarding
 
@@ -267,7 +263,7 @@ export default class level1 extends Phaser.Scene
         this.input.on('dragend', (pointer, gameObject) => {
 
             // note where the draggable has been released
-            const x = gameObject.x+ (this.ScrollFactor*this.scrollOffset)
+            const x = gameObject.x+ (this.scrollDistance*this.scrollOffset)
             const y = gameObject.y
 
             // If the correct draggable is dropped in the drop zone...
@@ -369,14 +365,14 @@ export default class level1 extends Phaser.Scene
                     this.scrollOffset++
                 }
                 
-                this.cameraGuide.x = this.scrollOffset*this.ScrollFactor
+                this.cameraGuide.x = this.scrollOffset*this.scrollDistance
             } else 
             if(direction=='left'){
                 console.log('left')
                 if(this.scrollOffset>-7){
                     this.scrollOffset--
                 }
-                this.cameraGuide.x = this.scrollOffset*this.ScrollFactor
+                this.cameraGuide.x = this.scrollOffset*this.scrollDistance
             }
             console.log(this.scrollOffset)
 

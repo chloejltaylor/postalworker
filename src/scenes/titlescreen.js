@@ -102,6 +102,33 @@ preload()
     this.load.image('letterCounter3_7-8', './src/assets/Items/level_3/l3_dock_counter_7-8.png')
     this.load.image('letterCounter3_8-8', './src/assets/Items/level_3/l3_dock_counter_8-8.png')
 
+    this.load.image('parcel1', './src/assets/bonus_level/post_1-s.png')
+    this.load.image('parcel2', './src/assets/bonus_level/post_1-s.png')
+    this.load.image('parcel3', './src/assets/bonus_level/post_2-m.png')
+    this.load.image('parcel4', './src/assets/bonus_level/post_2-m.png')
+    this.load.image('parcel5', './src/assets/bonus_level/post_3-l.png')
+    this.load.image('parcel6', './src/assets/bonus_level/post_3-l.png')
+
+    this.load.image('postCounted', './src/assets/bonus_level/post_counted_graphic.png')
+    this.load.image('postCounted0-6', './src/assets/bonus_level/post_counter_0-6.png')
+    this.load.image('postCounted1-6', './src/assets/bonus_level/post_counter_1-6.png')
+    this.load.image('postCounted2-6', './src/assets/bonus_level/post_counter_2-6.png')
+    this.load.image('postCounted3-6', './src/assets/bonus_level/post_counter_3-6.png')
+    this.load.image('postCounted4-6', './src/assets/bonus_level/post_counter_4-6.png')
+    this.load.image('postCounted5-6', './src/assets/bonus_level/post_counter_5-6.png')
+    this.load.image('postCounted6-6', './src/assets/bonus_level/post_counter_6-6.png')
+
+    this.load.image('scales_dial', './src/assets/bonus_level/scales_dial3.png')
+    this.load.image('scales', './src/assets/bonus_level/scales.png')
+
+    this.load.image('stamp1', './src/assets/bonus_level/stamp_1-s.png')
+    this.load.image('stamp2', './src/assets/bonus_level/stamp_2-m.png')
+    this.load.image('stamp3', './src/assets/bonus_level/stamp_2-l.png')
+
+    this.load.image('stamp_dock', './src/assets/bonus_level/stamp_dock.png')
+
+
+
    
 }
 
@@ -131,15 +158,15 @@ create()
     this.start.once('pointerdown', () => {
         this.scene.stop()
 
-        this.scene.start('level1', {
-            level: 0,
-            firstLevel: true,
-        })
-
-        // this.scene.start('bonus', {
+        // this.scene.start('level1', {
         //     level: 0,
-        //     firstLevel: true
+        //     firstLevel: true,
         // })
+
+        this.scene.start('level1', {
+            level: 2,
+
+        })
 
         }
         )
