@@ -35,7 +35,6 @@ create()
 
         this.scene.start('level1', {
             level: 0,
-            firstLevel: true
         })
     
     })

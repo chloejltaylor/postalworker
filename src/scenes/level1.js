@@ -138,6 +138,7 @@ export default class level1 extends Phaser.Scene
         this.level=data.level
         this.firstLevel=data.firstLevel
         this.nextLetter=0
+        this.scrollOffset = 0
     }
 
     create()
@@ -155,7 +156,6 @@ export default class level1 extends Phaser.Scene
         else if(this.level==1){this.orderofletters = [0,1,2,3,4,5]}
         if(this.level==2){this.orderofletters = [0,1,2,3,4,5,6,7]}
         shuffle(this.orderofletters)
-        console.log(this.orderofletters)
         if(this.firstLevel){
             this.onboardingTimer = this.time.delayedCall(800, this.onboardingAnim, [], this)
 
@@ -243,7 +243,7 @@ export default class level1 extends Phaser.Scene
             this.item.letterNumber = this.nextLetter
 
             //Find out which bin it should go in
-        this.matchLetterWithHouse(this.item)
+        this.matchLetterWithHouse()
         }
 
         
@@ -303,7 +303,7 @@ export default class level1 extends Phaser.Scene
                 else{
                     this.item = this.items.create(this.startItemX, this.startItemY, this.itemsArray[this.level][this.orderofletters[this.nextLetter]]).setInteractive({ draggable: true }).setScrollFactor(0)
                     this.item.letterNumber = this.nextLetter
-                    this.matchLetterWithHouse(this.item)
+                    this.matchLetterWithHouse()
                 }
 
 
@@ -360,7 +360,6 @@ export default class level1 extends Phaser.Scene
 
         scroll(direction){
             if(direction=='right'){
-                console.log('right')
                 if(this.scrollOffset<6){
                     this.scrollOffset++
                 }
@@ -368,13 +367,11 @@ export default class level1 extends Phaser.Scene
                 this.cameraGuide.x = this.scrollOffset*this.scrollDistance
             } else 
             if(direction=='left'){
-                console.log('left')
                 if(this.scrollOffset>-7){
                     this.scrollOffset--
                 }
                 this.cameraGuide.x = this.scrollOffset*this.scrollDistance
             }
-            console.log(this.scrollOffset)
 
         }
 
@@ -397,24 +394,22 @@ export default class level1 extends Phaser.Scene
                     }) 
                 }
                 else if(this.level==2){
-                    this.scene.start('level1',  {
-                        level: 0,
-                    }) 
-                    // this.scene.start('intro-bonus')
+
+                    this.scene.start('intro-bonus')
                 }
                 
             })
         }
 
-        matchLetterWithHouse(letter) {
+        matchLetterWithHouse() {
 
             this.currentTargetX=this.alltargets[this.level][this.orderofletters[this.nextLetter]][0]
             this.currentTargetY=this.alltargets[this.level][this.orderofletters[this.nextLetter]][1]
             this.currentEndPositionX=this.allEndPositions[this.level][this.orderofletters[this.nextLetter]][0]
             this.currentEndPositionY=this.allEndPositions[this.level][this.orderofletters[this.nextLetter]][1]
-            
 
             
+
         }
 
         onboardingAnim() {
